@@ -1,0 +1,21 @@
+@use 'sass:math';
+
+@function rem($pixel) {
+    // divide $pixel by 16 to return rems
+    @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem; // convert, 16px is equal to 1rem
+    }
+    @else {
+        @error 'Do notuse unit in rem function!';
+    }
+}
+
+@function em($pixel) {
+    // divide $pixel by 16 to return rems
+    @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + em; // convert, 16px is equal to 1rem
+    }
+    @else {
+        @error 'Do notuse unit in em function!';
+    }
+}
